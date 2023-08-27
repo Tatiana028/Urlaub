@@ -10,7 +10,6 @@ public class Flight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @OneToOne (fetch = FetchType.LAZY)
     private long flightID;
 
     @Column(name="Preis", nullable = false)

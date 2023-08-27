@@ -3,9 +3,10 @@ package com.vacations.website.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table
-
 
 public class Airport {
 
@@ -17,4 +18,9 @@ public class Airport {
 
     private String airportLocation;
 
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "destinationAirport")
+    private List<Flight> destinationFlights;
+
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "departureAirport")
+    private List<Flight> departureFlights;
 }
