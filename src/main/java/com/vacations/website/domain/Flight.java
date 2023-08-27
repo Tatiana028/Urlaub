@@ -10,14 +10,21 @@ public class Flight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @OneToOne (fetch = FetchType.LAZY)
     private long flightID;
 
     @Column(name="Preis", nullable = false)
     private double price;
 
-    private long destinationAirportID;
 
-    private long departureAirportID;
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "destinationAirportID")
+    private Airport destinationAirport;
+
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "departureAirportID")
+    private Airport departureAirport;
+
 
     private LocalDateTime arrivalTime;
 
