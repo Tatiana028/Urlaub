@@ -10,22 +10,27 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long bookingID;
 
-    @OneToOne (fetch = FetchType.LAZY)
-    @JoinColumn
-    private long flightID;
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "flightID")
+    private Flight flight;
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "userID")
-    private long userID;
+    private User user;
 
     private int bookingDate;
 
     private int place;
-    public Booking(long flightID, long userID, int bookingDate, int place) {
-        this.flightID = flightID;
-        this.userID = userID;
+
+    public Booking(Flight flight, User user, int bookingDate, int place) {
+        this.flight = flight;
+        this.user = user;
         this.bookingDate = bookingDate;
         this.place = place;
+    }
+
+    public Booking() {
+
     }
 
     public long getBookingID() {
@@ -34,22 +39,6 @@ public class Booking {
 
     public void setBookingID(long bookingID) {
         this.bookingID = bookingID;
-    }
-
-    public long getFlightID() {
-        return flightID;
-    }
-
-    public void setFlightID(long flightID) {
-        this.flightID = flightID;
-    }
-
-    public long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(long userID) {
-        this.userID = userID;
     }
 
     public int getBookingDate() {

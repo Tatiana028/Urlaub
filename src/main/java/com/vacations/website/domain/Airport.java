@@ -18,7 +18,7 @@ public class Airport {
     private String airportName;
 
     private String airportLocation;
-@OneToMany(cascade = CascadeType.ALL, mappedBy = "destinationAirport")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "destinationAirport")
     private List<Flight> destinationsFlights;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "departureAirport")
     private List<Flight> departuresFlights;
@@ -28,6 +28,10 @@ public class Airport {
         this.airportLocation = airportLocation;
         this.destinationsFlights = destinationsFlights;
         this.departuresFlights = departuresFlights;
+    }
+
+    public Airport() {
+
     }
 
     public long getAirportID() {

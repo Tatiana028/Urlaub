@@ -3,6 +3,7 @@ package com.vacations.website.domain;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="Flug")
@@ -15,6 +16,9 @@ public class Flight {
     @Column(name="Preis", nullable = false)
     private double price;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "airplaneID")
+    private Airplane airplane;
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "destinationAirportID")
@@ -24,17 +28,25 @@ public class Flight {
     @JoinColumn (name = "departureAirportID")
     private Airport departureAirport;
 
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    private List<Booking> bookings;
 
     private LocalDateTime arrivalTime;
 
     private LocalDateTime departureTime;
 
-    public Flight(double price, Airport destinationAirport, Airport departureAirport, LocalDateTime arrivalTime, LocalDateTime departureTime) {
+    public Flight(double price, Airplane airplane, Airport destinationAirport,
+                  Airport departureAirport, LocalDateTime arrivalTime, LocalDateTime departureTime) {
         this.price = price;
+        this.airplane = airplane;
         this.destinationAirport = destinationAirport;
         this.departureAirport = departureAirport;
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
+    }
+
+    public Flight() {
+
     }
 
     public long getFlightID() {
