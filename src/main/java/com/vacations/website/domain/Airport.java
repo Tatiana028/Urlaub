@@ -2,6 +2,8 @@ package com.vacations.website.domain;
 
 
 import jakarta.persistence.*;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,11 +12,12 @@ import java.util.List;
 
 
 public class Airport {
-
+    @Repository
+    public interface AirportRepository extends CrudRepository<Airport, Long> {}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long airportID;
-
+/*@NotBlank(message:)*/
     private String airportName;
 
     private String airportLocation;

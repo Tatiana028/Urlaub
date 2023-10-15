@@ -1,6 +1,8 @@
 package com.vacations.website.domain;
 
 import jakarta.persistence.*;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,6 +33,8 @@ public class Airplane {
         this.airline = airline;
         this.amountOfPlaces = amountOfPlaces;
     }
+
+
 
     public Airline getAirline() {
         return airline;
