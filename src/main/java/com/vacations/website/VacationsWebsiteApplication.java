@@ -52,7 +52,7 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 
 		airlineRepository.saveAll(airlines);
 
-		List<Airline> airlinesWithE = airlineRepository.findByAirlineNameStartsWith("E");
+	/*	List<Airline> airlinesWithE = airlineRepository.findByAirlineNameStartsWith("E");
 		for (Airline a : airlinesWithE) {
 			System.out.println(a.getAirlineName());
 		}
