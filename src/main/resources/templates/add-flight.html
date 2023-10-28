@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/add-flight}" th:object="${flight}" method="post">
+    <label for="flightName">Name</label>
+    <input type="text" th:field="*{flightName}" id="flightName" placeholder="Name">
+
+    <p><b> From: </b><br>
+        <input type="text" size="40">
+    </p>
+    <p><b> To: </b><br>
+        <input type="text" size="40">
+    </p>
+
+    <div id="calendar"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+    <p style="text-align: center"><button>Search flights</button>
+    </p>
+</form>
+</body>
+</html>
