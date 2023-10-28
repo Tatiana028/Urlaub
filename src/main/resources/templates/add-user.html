@@ -5,8 +5,21 @@
     <title>SkyFly</title>
 </head>
 <body>
-<form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+<h1><strong> SkyFly</strong> </h1>
+<form name="test" method="post" action="add-user.html">
+    <p><b> Name: </b><br>
+    <input type="text" size="40">
+    </p>
+    <p><b> Vorname: </b><br>
+        <input type="text" size="40">
+    </p>
+    <p><input type="submit" value="Senden">
+    </p>
+    <p>Email: <input type="email" name="login">
+    </p>
     <label for="name">Name</label>
+
+    <form action="#" th:action="@{/add-user}" th:object="${user}" method="post">
     <input type="text" th:field="*{name}" id="name" placeholder="Name">
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     <label for="email">Email</label>

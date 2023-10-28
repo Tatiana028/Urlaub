@@ -57,6 +57,7 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 			System.out.println(a.getAirlineName());
 		}
 
+	 */
 
 		Airplane boeing_7372 = new Airplane(1, lufthansa, 242);
 		Airplane airbus_2421 = new Airplane(2, thaiAirways, 300);
