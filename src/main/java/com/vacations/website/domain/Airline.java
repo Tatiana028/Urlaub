@@ -20,8 +20,8 @@ public class Airline {
 
     private String airlineName;
 
-    public Airline(List<Airplane> airplaneList, String airlineName) {
-        this.airplaneList = airplaneList;
+    public Airline(String airlineName) {
+       // this.airplaneList = airplaneList;
         this.airlineName = airlineName;
     }
 

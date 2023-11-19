@@ -2,8 +2,7 @@ package com.vacations.website.domain;
 
 
 import jakarta.persistence.*;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
 
@@ -12,8 +11,6 @@ import java.util.List;
 
 
 public class Airport {
-    @Repository
-    public interface AirportRepository extends CrudRepository<Airport, Long> {}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long airportID;
@@ -26,11 +23,9 @@ public class Airport {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "departureAirport")
     private List<Flight> departuresFlights;
 
-    public Airport(String airportName, String airportLocation, List<Flight> destinationsFlights, List<Flight> departuresFlights) {
+    public Airport(String airportName, String airportLocation) {
         this.airportName = airportName;
         this.airportLocation = airportLocation;
-        this.destinationsFlights = destinationsFlights;
-        this.departuresFlights = departuresFlights;
     }
 
     public Airport() {

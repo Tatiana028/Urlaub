@@ -1,17 +1,10 @@
 package com.vacations.website.domain;
 
 import jakarta.persistence.*;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 @Entity
-@Table
 
 public class Booking {
-
-    @Repository
-    public interface BookingRepository extends CrudRepository<Booking, Long> {}
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long bookingID;
@@ -63,4 +56,19 @@ public class Booking {
         this.place = place;
     }
 
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
