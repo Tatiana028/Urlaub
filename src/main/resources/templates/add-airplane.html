@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/add-airplane}" th:object="${airplane}" method="post">
+  <label for="airplaneName">Name</label>
+  <label for="amountOfPlaces">Amount of places</label>
+  <input type="text" th:field="*{airplaneName}" id="airplaneName" placeholder="Name">
+  <input type="text" th:field="*{amountOfPlaces}" id="amountOfPlaces" placeholder="Amount of places">
+  <input type="submit" value="speichern">
+</form>
+</body>
+</html>

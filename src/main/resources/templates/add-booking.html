@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/add-booking}" th:object="${booking}" method="post">
+  <label for="bookingDate">Date</label>
+  <input type="text" th:field="*{bookingDate}" id="bookingDate" placeholder="Date">
+  <label for="place">Place</label>
+  <input type="text" th:field="*{place}" id="place" placeholder="Place">
+  <input type="submit" value="speichern">
+</form>
+</body>
+</html>
+//TODO add user and flight
