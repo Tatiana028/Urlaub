@@ -6,15 +6,28 @@
 </head>
 <body>
 <form action="#" th:action="@{/add-flight}" th:object="${flight}" method="post">
-    <label for="flightName">Name</label>
-    <input type="text" th:field="*{flightName}" id="flightName" placeholder="Name">
-
-    <p><b> From: </b><br>
+    <label for="price">Price</label>
+    <input type="text" th:field="*{price}" id="price" placeholder="Price">
+    <label for="airplanes">Choose an airplane:</label>
+    <select class="form-control" id="airplanes">
+        <option value="null">select airplane</option>
+        <option th:each="airplane : ${airplanes}" th:value="${airplane}" th:text="${airplane.getAirplaneName()}">
+        </option>
+    </select>
+    <label for="destinationAirport">Destination Airport</label>
+    <input type="text" th:field="*{destinationAirport}" id="destinationAirport" placeholder=">Destination Airport">
+    <label for="departureAirport">Departure Airport</label>
+    <input type="text" th:field="*{departureAirport}" id="departureAirport" placeholder="Departure Airport">
+    <label for="departureTime">Departure Time</label>
+    <input type="text" th:field="*{departureTime}" id="departureTime" placeholder="Departure Time">
+    <label for="arrivalTime">Arrival Time</label>
+    <input type="text" th:field="*{arrivalTime}" id="arrivalTime" placeholder="Arrival Time">
+   <!-- <p><b> From: </b><br>
         <input type="text" size="40">
     </p>
     <p><b> To: </b><br>
         <input type="text" size="40">
-    </p>
+    </p>-->
 
     <div id="calendar"></div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
@@ -24,4 +37,3 @@
 </form>
 </body>
 </html>
-//TODO add other stuff

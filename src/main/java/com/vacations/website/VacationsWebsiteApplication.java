@@ -45,6 +45,7 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 		Airline thaiAirways = new Airline("Thai Airways");
 		Airline emirates = new Airline("Emirates");
 
+
 		List<Airline> airlines = new ArrayList<>();
 		airlines.add(lufthansa);
 		airlines.add(thaiAirways);
