@@ -41,9 +41,9 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		System.out.println("Hallo");
-		Airline lufthansa = new Airline(null, "Lufthansa");
-		Airline thaiAirways = new Airline(null, "Thai Airways");
-		Airline emirates = new Airline(null, "Emirates");
+		Airline lufthansa = new Airline( "Lufthansa");
+		Airline thaiAirways = new Airline("Thai Airways");
+		Airline emirates = new Airline("Emirates");
 
 		List<Airline> airlines = new ArrayList<>();
 		airlines.add(lufthansa);
@@ -59,9 +59,9 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 
 	 */
 
-		Airplane boeing_7372 = new Airplane(1, lufthansa, 242);
-		Airplane airbus_2421 = new Airplane(2, thaiAirways, 300);
-		Airplane falcon_72 = new Airplane(3, emirates, 150);
+		Airplane boeing_7372 = new Airplane( "boeing7372", lufthansa, 242);
+		Airplane airbus_2421 = new Airplane("airbus2421", thaiAirways, 300);
+		Airplane falcon_72 = new Airplane(" falcon72", emirates, 150);
 
 		List<Airplane> airplanes = new ArrayList<>();
 		airplanes.add(boeing_7372);
@@ -71,9 +71,9 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 		airplaneRepository.saveAll(airplanes);
 
 
-		Airport frankfrut = new Airport("Frankfrut Airport", "Frankfrut", null, null);
-		Airport istanbul = new Airport("Istanbul Airport", "Istanbul", null, null);
-		Airport mumbai = new Airport("Mumbai Airport", "Mumbai", null, null);
+		Airport frankfrut = new Airport("Frankfrut Airport", "Frankfrut");
+		Airport istanbul = new Airport("Istanbul Airport", "Istanbul");
+		Airport mumbai = new Airport("Mumbai Airport", "Mumbai");
 
 		List<Airport> airports = new ArrayList<>();
 		airports.add(frankfrut);

@@ -1,8 +1,6 @@
 package com.vacations.website.domain;
 
 import jakarta.persistence.*;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,6 +13,8 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long airplaneID;
 
+    private String airplaneName;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "airplane")
     private List<Flight> flights;
 
@@ -24,16 +24,15 @@ public class Airplane {
 
     private int amountOfPlaces;
 
-    public Airplane() {
-
-    }
-
-    public Airplane(long flightID, Airline airline, int amountOfPlaces) {
-       // this.flightID = flightID;
+    public Airplane( String airplaneName,Airline airline, int amountOfPlaces) {
+        this.airplaneName = airplaneName;
         this.airline = airline;
         this.amountOfPlaces = amountOfPlaces;
     }
 
+    public Airplane() {
+
+    }
 
 
     public Airline getAirline() {
