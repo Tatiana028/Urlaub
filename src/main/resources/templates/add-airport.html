@@ -8,6 +8,8 @@
 <form action="#" th:action="@{/add-airport}" th:object="${airport}" method="post">
   <label for="airportName">Name</label>
   <input type="text" th:field="*{airportName}" id="airportName" placeholder="Name">
+  <label for="airportLocation">Location</label>
+  <input type="text" th:field="*{airportLocation}" id="airportLocation" placeholder="Location">
   <input type="submit" value="speichern">
 </form>
 </body>

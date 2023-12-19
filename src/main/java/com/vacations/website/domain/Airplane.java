@@ -13,6 +13,14 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long airplaneID;
 
+    public String getAirplaneName() {
+        return airplaneName;
+    }
+
+    public void setAirplaneName(String airplaneName) {
+        this.airplaneName = airplaneName;
+    }
+
     private String airplaneName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "airplane")

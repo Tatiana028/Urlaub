@@ -74,7 +74,9 @@ public class VacationController {
     FlightRepository flightRepository;
 
     @GetMapping("/add-flight")
-    public String addFlight(Flight flight) {
+    public String addFlight(Model model) {
+        model.addAttribute("flight", new Flight());
+        model.addAttribute("airplanes", airplaneRepository.findAll());
         return "add-flight";
     }
 
