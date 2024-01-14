@@ -10,6 +10,12 @@
   <label for="amountOfPlaces">Amount of places</label>
   <input type="text" th:field="*{airplaneName}" id="airplaneName" placeholder="Name">
   <input type="text" th:field="*{amountOfPlaces}" id="amountOfPlaces" placeholder="Amount of places">
+  <label for="airlines">Choose an airline:</label>
+  <select class="form-control" id="airlines">
+    <option value="null">select airline</option>
+    <option th:each="airline : ${airlines}" th:value="${airline}" th:text="${airline.get}">
+    </option>
+  </select>
   <input type="submit" value="speichern">
 </form>
 </body>
