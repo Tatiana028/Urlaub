@@ -19,6 +19,14 @@ public class VacationController {
         return "add-airline";
     }
 
+    @GetMapping("/")
+    public String showStarterPage(Airline airline) {
+        return "userInterface/starterPage";
+    }
+
+
+
+
     @PostMapping("/add-airline")
     public String addAirline(Airline airline, Model model) {
         airlineRepository.save(airline);
