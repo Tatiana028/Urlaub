@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "airline")
 
 public class Airline {
 

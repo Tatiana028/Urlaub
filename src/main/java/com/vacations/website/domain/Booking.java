@@ -3,6 +3,7 @@ package com.vacations.website.domain;
 import jakarta.persistence.*;
 
 @Entity
+@Table (name = "booking")
 
 public class Booking {
     @Id

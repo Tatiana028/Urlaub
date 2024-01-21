@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table
+@Table (name = "airplane")
 public class Airplane {
 
     @Id
