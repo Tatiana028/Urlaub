@@ -20,6 +20,7 @@ public class UserInterfaceController {
     @PostMapping("/show-flights")
     public String showFlights(Model model){
         String from = (String) model.getAttribute("from");
+
         return "userInterface/listOfFlights";
     }
 }

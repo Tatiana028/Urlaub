@@ -40,7 +40,7 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		System.out.println("Hallo");
+		/*System.out.println("Hallo");
 		Airline lufthansa = new Airline( "Lufthansa");
 		Airline thaiAirways = new Airline("Thai Airways");
 		Airline emirates = new Airline("Emirates");
@@ -60,7 +60,7 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 
 	 */
 
-		Airplane boeing_7372 = new Airplane( "boeing7372", lufthansa, 242);
+		/*Airplane boeing_7372 = new Airplane( "boeing7372", lufthansa, 242);
 		Airplane airbus_2421 = new Airplane("airbus2421", thaiAirways, 300);
 		Airplane falcon_72 = new Airplane(" falcon72", emirates, 150);
 
@@ -113,6 +113,8 @@ public class VacationsWebsiteApplication implements CommandLineRunner {
 		booking.add(booking_3);
 
 		bookingRepository.saveAll(booking);
+
+		 */
 
 	}
 
