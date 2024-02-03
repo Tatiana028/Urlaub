@@ -23,4 +23,12 @@ public class UserInterfaceController {
 
         return "userInterface/listOfFlights";
     }
+
+    @PostMapping("/personal-data")
+    public String addPersonalData(Model model){
+        String from = (String) model.getAttribute("from");
+
+        return "userInterface/personalData";
+    }
+
 }

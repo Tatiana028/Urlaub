@@ -2,16 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:insert="/userInterface/blocks/header.html :: header"></div>
+    <title>Imaginary Airline - Flights</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        h1 {
+            color: #0066cc;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        h2 {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .flight-info {
+            flex-grow: 1;
+            padding: 10px;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #0066cc;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .business {
+            background-color: #ff9900;
+        }
+
+        .economy {
+            background-color: #66cc66;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            li {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .price {
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
 
+<form class="needs-validation" novalidate="" action="#" th:action="@{/personal-data}" method="post">
 
-<div th:insert="/userInterface/blocks/header.html :: header"></div>
+<h1> Available Flights</h1>
+
+<ul>
+    <li>
+        <div class="flight-info">
+            <p>Departure: New York (JFK)</p>
+            <p>Destination: Los Angeles (LAX)</p>
+            <p>Departure Time: 10:00 AM</p>
+        </div>
+        <div class="price">
+            <div class="business">$400 (Business)</div>
+            <div class="economy">$300 (Economy)</div>
+        </div>
+    </li>
+
+    <li>
+        <div class="flight-info">
+            <p>Departure: Chicago (ORD)</p>
+            <p>Destination: Miami (MIA)</p>
+            <p>Departure Time: 12:30 PM</p>
+        </div>
+        <div class="price">
+            <div class="business">$350 (Business)</div>
+            <div class="economy">$250 (Economy)</div>
+        </div>
+    </li>
+
+    <li>
+        <div class="flight-info">
+            <p>Departure: San Francisco (SFO)</p>
+            <p>Destination: Seattle (SEA)</p>
+            <p>Departure Time: 2:45 PM</p>
+        </div>
+        <div class="price">
+            <div class="business">$300 (Business)</div>
+            <div class="economy">$200 (Economy)</div>
+        </div>
+    </li>
+</ul>
 
 
+
+<hr class="my-4">
+<button class="w-100 btn btn-primary btn-lg" type="submit">Next</button>
+</form>
 
 <div th:insert="/userInterface/blocks/footer.html :: footer"></div>
 
