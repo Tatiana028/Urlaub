@@ -24,11 +24,18 @@ public class UserInterfaceController {
         return "userInterface/listOfFlights";
     }
 
-    @PostMapping("/personal-data")
+    @GetMapping("/personal-data")
     public String addPersonalData(Model model){
         String from = (String) model.getAttribute("from");
 
         return "userInterface/personalData";
+    }
+
+    @PostMapping("/payment")
+    public String payment(Model model){
+        String from = (String) model.getAttribute("from");
+
+        return "userInterface/payment";
     }
 
 }
