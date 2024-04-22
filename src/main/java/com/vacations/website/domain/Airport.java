@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Airport {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long airportID;
 /*@NotBlank(message:)*/
     private String airportName;

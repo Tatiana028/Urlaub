@@ -12,7 +12,7 @@ import java.util.List;
 public class Airline {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long airlineID;
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "airline")

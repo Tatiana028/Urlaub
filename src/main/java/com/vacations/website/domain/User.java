@@ -12,7 +12,7 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     // @OneToMany (cascade = CascadeType.ALL, mappedBy = "bookingID")
     private long userID;
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class Airplane {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long airplaneID;
 
     public String getAirplaneName() {
