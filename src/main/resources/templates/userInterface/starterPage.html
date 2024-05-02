@@ -29,10 +29,10 @@
 
                     <div class="col-md-4">
                         <label for="from" class="form-label">From</label>
-                        <select class="form-select" id="from" required="">
+                        <select class="form-select" id="from" required="" name="from">
                             <option value="0">Choose...</option>
-                            <option th:each="airport : ${airports}" th:value="${airport}"
-                                    th:text="${airport.getAirportLocation()}"></option>
+                            <option th:each="airport : ${airports}" th:value="${airport.getAirportID()}"
+                                    th:text="${airport.getAirportLocation()}" ></option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid country.
@@ -41,10 +41,10 @@
 
                     <div class="col-md-4">
                         <label for="to" class="form-label">To</label>
-                        <select class="form-select" id="to" required="">
+                        <select class="form-select" id="to" required="" name="to">
                             <option value="0">Choose...</option>
-                            <option th:each="airport : ${airports}" th:value="${airport}"
-                                    th:text="${airport.getAirportLocation()}"></option>
+                            <option th:each="airport : ${airports}" th:value="${airport.getAirportID()}"
+                                    th:text="${airport.getAirportLocation()}" ></option>
                         </select>
                         <div class="invalid-feedback">
                             Please provide a valid state.

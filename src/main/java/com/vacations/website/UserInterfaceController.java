@@ -1,15 +1,13 @@
 package com.vacations.website;
 
-import com.vacations.website.domain.Airline;
-import com.vacations.website.domain.Airport;
-import com.vacations.website.domain.AirportRepository;
-import com.vacations.website.domain.FlightRepository;
+import com.vacations.website.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -30,9 +28,11 @@ public class UserInterfaceController {
     }
 
     @PostMapping("/show-flights")
-    public String showFlights(@ModelAttribute Airport airport){
-        String from = airport.getAirportName();
-        System.out.println(from);
+    public String showFlights(Model model, @RequestParam String from, @RequestParam String to){
+        Airport departure = airportRepository.findById(Long.parseLong(from)).get();
+        Airport destination = airportRepository.findById(Long.parseLong(to)).get();
+        List<Flight> selectedFlights = flightRepository.findAllByDepartureAirportAndDestinationAirport(departure,destination);
+        model.addAttribute("flights", selectedFlights);
         return "userInterface/listOfFlights";
     }
 
