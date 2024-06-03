@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -33,6 +34,8 @@ public class UserInterfaceController {
         Airport destination = airportRepository.findById(Long.parseLong(to)).get();
         List<Flight> selectedFlights = flightRepository.findAllByDepartureAirportAndDestinationAirport(departure,destination);
         model.addAttribute("flights", selectedFlights);
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        model.addAttribute("timeFormatter", timeFormatter);
         return "userInterface/listOfFlights";
     }
 

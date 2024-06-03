@@ -82,8 +82,8 @@
         <div class="flight-info">
             <div class="flight-details">
                 <div>
-                    <p style="margin: 0;">07:15</p>
-                    <p style="margin: 0;" th:text="${flight.getDepartureAirport()}"></p>
+                    <p style="margin: 0;" th:text="${flight.getDepartureTime().format(timeFormatter)}"></p>
+                    <p style="margin: 0;" th:text="${flight.getDepartureAirport().getAirportName()}"></p>
                 </div>
                 <hr>
                 <div>
