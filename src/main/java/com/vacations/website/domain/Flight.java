@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Entity
@@ -36,6 +37,17 @@ public class Flight {
     private LocalDateTime arrivalTime;
 
     private LocalDateTime departureTime;
+
+    private Integer flightDuration;
+
+    public Integer getFlightDuration() {
+        return flightDuration;
+    }
+
+    public void setFlightDuration(Integer flightDuration) {
+        this.flightDuration = flightDuration;
+    }
+
 
     public Flight(double price, Airplane airplane, Airport destinationAirport,
                   Airport departureAirport, LocalDateTime arrivalTime, LocalDateTime departureTime) {

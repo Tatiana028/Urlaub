@@ -82,16 +82,16 @@
         <div class="flight-info">
             <div class="flight-details">
                 <div>
-                    <p style="margin: 0;" th:text="${flight.getDepartureTime().format(timeFormatter)}"></p>
+                    <p style="margin: 0;" th:text="${flight.getArrivalTime().format(timeFormatter)}"></p>
                     <p style="margin: 0;" th:text="${flight.getDepartureAirport().getAirportName()}"></p>
                 </div>
                 <hr>
                 <div>
-                    <p style="margin: 0;">9:30</p>
-                    <p style="margin: 0;">FCO</p>
+                    <p style="margin: 0;"th:text="${flight.getDepartureTime().format(timeFormatter)}" ></p>
+                    <p style="margin: 0;"  th:text="${flight.getDestinationAirport().getAirportName()}"></p>
                 </div>
             </div>
-            <p>Dauer: 2:15</p>
+            <p th:text="'Dauer: ' + ${flight.getFlightDuration()} + ' Minuten'"></p>
         </div>
 
         <div class="price">
